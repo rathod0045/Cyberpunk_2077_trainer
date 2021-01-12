@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <Forms>
+    <CETrainer Class="TTrainerForm" Encoding="Ascii85">eUrUz,b_S]DXF(pf{%r/Y):N84Z372K)S0LM6m;mLEBNbuWi9HY0y-P@dT}2;09*fiatph)U#?F$s{A#[uO.8BmQ#]V%f#n31hM-IminkS3aTJ;Qw=W/?}k#11RSU/p_4RV)na8y;I1IEu24:ONzBB1?FHjcVm$2nlC={ou7YDM(N^0C2-ZYho*{3Q%*,e0XJwK]sHNlWnxo4O1iJtBA-YAPIL:M6f#2dbyX?_[(Lq!2)xr#JU+a9k2W$E=H*p(=#l]eRY1S95zg=CCQX/9Op^jY.i^Z-w[j9]9_jTJLKSnpk=W6d6Y(!yOwDOptAo:QSANiDig7BZAZ-iz,E]R8C3uLV@oB)?jHN=kZO7bx-ylzS$nSU7yrPPP=p:AfRw6Hdf!}JF!)(mahOQ;,22E,]w(Rfj6R)On@x_uLNe;6;lp7{Yk-:sqH(,tWWZ_POV:_za=HN12pM!jAJr#Tr-Kn,rZa4FiVhmL^NZA$rk;F=-YOo^swiy;{e{qpho(G=mCESHsA,/UYm5=6VE57,kb25rE7N@6G=DV,o$Gt3[(0wOQ$aXR(Nt*Ac#.e1O/88,F7Z;x%LdZ=%6-yH]I,n7zJ8jCHJJd{Xq5l</CETrainer>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"InfAmmo"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : Cyberpunk2077.exe
+  Version: 
+  Date   : 2021-01-12
+  Author : Varun
+}
+
+[ENABLE]
+
+aobscanmodule(InfAmmo,Cyberpunk2077.exe,75 7F 48 8D 8E 28 03 00 00)
+alloc(newmem,$1000,InfAmmo)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  jmp Cyberpunk2077.exe+1A7E686
+  lea rcx,[rsi+00000328]
+  jmp return
+
+InfAmmo:
+  jmp newmem
+  nop 4
+return:
+registersymbol(InfAmmo)
+
+[DISABLE]
+
+InfAmmo:
+  db 75 7F 48 8D 8E 28 03 00 00
+
+unregistersymbol(InfAmmo)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+1A7E605
+
+Cyberpunk2077.exe+1A7E5D5: 48 8B 86 00 02 00 00     - mov rax,[rsi+00000200]
+Cyberpunk2077.exe+1A7E5DC: 48 89 45 C0              - mov [rbp-40],rax
+Cyberpunk2077.exe+1A7E5E0: 0F B6 9E 44 03 00 00     - movzx ebx,byte ptr [rsi+00000344]
+Cyberpunk2077.exe+1A7E5E7: 49 8B CF                 - mov rcx,r15
+Cyberpunk2077.exe+1A7E5EA: 4C 89 A4 24 18 03 00 00  - mov [rsp+00000318],r12
+Cyberpunk2077.exe+1A7E5F2: E8 59 E6 FE FF           - call Cyberpunk2077.exe+1A6CC50
+Cyberpunk2077.exe+1A7E5F7: 0F B7 F8                 - movzx edi,ax
+Cyberpunk2077.exe+1A7E5FA: 66 85 C0                 - test ax,ax
+Cyberpunk2077.exe+1A7E5FD: 0F 84 45 02 00 00        - je Cyberpunk2077.exe+1A7E848
+Cyberpunk2077.exe+1A7E603: 84 DB                    - test bl,bl
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+1A7E605: 75 7F                    - jne Cyberpunk2077.exe+1A7E686
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+1A7E607: 48 8D 8E 28 03 00 00     - lea rcx,[rsi+00000328]
+Cyberpunk2077.exe+1A7E60E: E8 0D E1 FF 00           - call Cyberpunk2077.exe+2A7C720
+Cyberpunk2077.exe+1A7E613: 0F B7 8E 40 03 00 00     - movzx ecx,word ptr [rsi+00000340]
+Cyberpunk2077.exe+1A7E61A: 66 3B CF                 - cmp cx,di
+Cyberpunk2077.exe+1A7E61D: 66 0F 46 F9              - cmovbe di,cx
+Cyberpunk2077.exe+1A7E621: 66 2B CF                 - sub cx,di
+Cyberpunk2077.exe+1A7E624: 44 0F B7 E1              - movzx r12d,cx
+Cyberpunk2077.exe+1A7E628: 48 8B 8E 98 03 00 00     - mov rcx,[rsi+00000398]
+Cyberpunk2077.exe+1A7E62F: 41 8B D4                 - mov edx,r12d
+Cyberpunk2077.exe+1A7E632: E8 49 39 FE FF           - call Cyberpunk2077.exe+1A61F80
+}
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>97</Key>
+          </Keys>
+          <ID>0</ID>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"InfHealth"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : Cyberpunk2077.exe
+  Version: 
+  Date   : 2021-01-12
+  Author : Varun
+}
+
+[ENABLE]
+
+aobscanmodule(infHealth,Cyberpunk2077.exe,8B 85 90 01 00 00 41 89)
+alloc(newmem,$1000,infHealth)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  pushf
+  cmp [rbp+178],0
+  je @f
+  mov eax,[rbp+188]
+  mov [rbp+190],eax
+  @@:
+  popf
+  mov eax,[rbp+00000190]
+  jmp return
+
+infHealth:
+  jmp newmem
+  nop
+return:
+registersymbol(infHealth)
+
+[DISABLE]
+
+INJECT:
+  db 8B 85 90 01 00 00
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+195354A
+
+Cyberpunk2077.exe+1953506: 0F 85 54 FF FF FF        - jne Cyberpunk2077.exe+1953460
+Cyberpunk2077.exe+195350C: 48 8B 85 78 01 00 00     - mov rax,[rbp+00000178]
+Cyberpunk2077.exe+1953513: 48 8B 9C 24 80 00 00 00  - mov rbx,[rsp+00000080]
+Cyberpunk2077.exe+195351B: 49 89 86 78 01 00 00     - mov [r14+00000178],rax
+Cyberpunk2077.exe+1953522: 48 8B 85 80 01 00 00     - mov rax,[rbp+00000180]
+Cyberpunk2077.exe+1953529: 49 89 86 80 01 00 00     - mov [r14+00000180],rax
+Cyberpunk2077.exe+1953530: 8B 85 88 01 00 00        - mov eax,[rbp+00000188]
+Cyberpunk2077.exe+1953536: 41 89 86 88 01 00 00     - mov [r14+00000188],eax
+Cyberpunk2077.exe+195353D: 8B 85 8C 01 00 00        - mov eax,[rbp+0000018C]
+Cyberpunk2077.exe+1953543: 41 89 86 8C 01 00 00     - mov [r14+0000018C],eax
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+195354A: 8B 85 90 01 00 00        - mov eax,[rbp+00000190]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+1953550: 41 89 86 90 01 00 00     - mov [r14+00000190],eax
+Cyberpunk2077.exe+1953557: 8B 85 94 01 00 00        - mov eax,[rbp+00000194]
+Cyberpunk2077.exe+195355D: 41 89 86 94 01 00 00     - mov [r14+00000194],eax
+Cyberpunk2077.exe+1953564: 8B 85 98 01 00 00        - mov eax,[rbp+00000198]
+Cyberpunk2077.exe+195356A: 41 89 86 98 01 00 00     - mov [r14+00000198],eax
+Cyberpunk2077.exe+1953571: 0F B6 85 9C 01 00 00     - movzx eax,byte ptr [rbp+0000019C]
+Cyberpunk2077.exe+1953578: 41 88 86 9C 01 00 00     - mov [r14+0000019C],al
+Cyberpunk2077.exe+195357F: 0F B6 85 9D 01 00 00     - movzx eax,byte ptr [rbp+0000019D]
+Cyberpunk2077.exe+1953586: 41 88 86 9D 01 00 00     - mov [r14+0000019D],al
+Cyberpunk2077.exe+195358D: 0F B6 85 9E 01 00 00     - movzx eax,byte ptr [rbp+0000019E]
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>457</ID>
+      <Description>"Free Crafting"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(freeCraft,Cyberpunk2077.exe,0F B7 41 4B 0F B6 51 4D 66 89 44 24 08 4D 85 C0 74 23)
+alloc(newmem,$1000,freeCraft)
+
+label(code)
+label(return)
+
+newmem:
+  test r8,r8
+  je code
+  mov dword ptr [r8],0
+  xor r8,r8
+code:
+  movzx eax,word ptr [rcx+4B]
+  movzx edx,byte ptr [rcx+4D]
+  jmp return
+
+freeCraft:
+  jmp newmem
+  nop 3
+return:
+registersymbol(freeCraft)
+
+[DISABLE]
+freeCraft:
+  db 0F B7 41 4B 0F B6 51 4D
+unregistersymbol(freeCraft)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+C6E053
+
+Cyberpunk2077.exe+C6E047: CC              - int 3 
+Cyberpunk2077.exe+C6E048: CC              - int 3 
+Cyberpunk2077.exe+C6E049: CC              - int 3 
+Cyberpunk2077.exe+C6E04A: CC              - int 3 
+Cyberpunk2077.exe+C6E04B: CC              - int 3 
+Cyberpunk2077.exe+C6E04C: CC              - int 3 
+Cyberpunk2077.exe+C6E04D: CC              - int 3 
+Cyberpunk2077.exe+C6E04E: CC              - int 3 
+Cyberpunk2077.exe+C6E04F: CC              - int 3 
+Cyberpunk2077.exe+C6E050: 48 FF 02        - inc [rdx]
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+C6E053: 0F B7 41 4B     - movzx eax,word ptr [rcx+4B]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+C6E057: 0F B6 51 4D     - movzx edx,byte ptr [rcx+4D]
+Cyberpunk2077.exe+C6E05B: 66 89 44 24 08  - mov [rsp+08],ax
+Cyberpunk2077.exe+C6E060: 4D 85 C0        - test r8,r8
+Cyberpunk2077.exe+C6E063: 74 23           - je Cyberpunk2077.exe+C6E088
+Cyberpunk2077.exe+C6E065: 0F B6 C8        - movzx ecx,al
+Cyberpunk2077.exe+C6E068: 0F B6 44 24 09  - movzx eax,byte ptr [rsp+09]
+Cyberpunk2077.exe+C6E06D: C1 E1 08        - shl ecx,08
+Cyberpunk2077.exe+C6E070: 0B C8           - or ecx,eax
+Cyberpunk2077.exe+C6E072: 0F B6 C2        - movzx eax,dl
+Cyberpunk2077.exe+C6E075: C1 E1 08        - shl ecx,08
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>281</ID>
+      <Description>"No Recoil"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(norecoil,Cyberpunk2077.exe,41 FF ?? 08 4? 8B ?? 24 ?? 02 ?? ?? 48 85 C0 0F 84 ?? ?? ?? ?? 48)
+norecoil:
+  db 48 31 C0 90
+registersymbol(norecoil)
+
+[DISABLE]
+norecoil:
+  db 41 FF 50 08
+unregistersymbol(norecoil)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+2CA4B5D
+
+Cyberpunk2077.exe+2CA4B30: E8 5B 93 57 FD           - call Cyberpunk2077.exe+21DE90
+Cyberpunk2077.exe+2CA4B35: 0F B7 86 F0 00 00 00     - movzx eax,word ptr [rsi+000000F0]
+Cyberpunk2077.exe+2CA4B3C: 41 FF C4                 - inc r12d
+Cyberpunk2077.exe+2CA4B3F: 44 3B E0                 - cmp r12d,eax
+Cyberpunk2077.exe+2CA4B42: 0F 82 68 FC FF FF        - jb Cyberpunk2077.exe+2CA47B0
+Cyberpunk2077.exe+2CA4B48: 48 8B 9F 18 02 00 00     - mov rbx,[rdi+00000218]
+Cyberpunk2077.exe+2CA4B4F: E8 DC 00 77 FE           - call Cyberpunk2077.exe+1414C30
+Cyberpunk2077.exe+2CA4B54: 4C 8B 03                 - mov r8,[rbx]
+Cyberpunk2077.exe+2CA4B57: 48 8B D0                 - mov rdx,rax
+Cyberpunk2077.exe+2CA4B5A: 48 8B CB                 - mov rcx,rbx
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+2CA4B5D: 41 FF 50 08              - call qword ptr [r8+08]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+2CA4B61: 4C 8B A4 24 F0 02 00 00  - mov r12,[rsp+000002F0]
+Cyberpunk2077.exe+2CA4B69: 48 85 C0                 - test rax,rax
+Cyberpunk2077.exe+2CA4B6C: 0F 84 36 01 00 00        - je Cyberpunk2077.exe+2CA4CA8
+Cyberpunk2077.exe+2CA4B72: 48 8D 55 00              - lea rdx,[rbp+00]
+Cyberpunk2077.exe+2CA4B76: 48 8B C8                 - mov rcx,rax
+Cyberpunk2077.exe+2CA4B79: E8 02 B7 55 FD           - call Cyberpunk2077.exe+200280
+Cyberpunk2077.exe+2CA4B7E: 48 8B 08                 - mov rcx,[rax]
+Cyberpunk2077.exe+2CA4B81: 48 89 4D F0              - mov [rbp-10],rcx
+Cyberpunk2077.exe+2CA4B85: 48 8B 48 08              - mov rcx,[rax+08]
+Cyberpunk2077.exe+2CA4B89: 48 89 4D F8              - mov [rbp-08],rcx
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>47</ID>
+      <Description>"Inf. Weight"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{$lua}
+if syntaxcheck then return end
+
+[ENABLE]
+function setWeightToZero()
+  local weight="[[[[[[[PhysX3_x64.dll+25D5D8]+8]+0]+8]+1F8]+188]+38]+498"
+  local weightCheck=readFloat(weight)
+
+  if weightCheck~=nil then
+    writeFloat(weight,0)
+  end
+end
+
+function timer()
+  t=createTimer()
+  t.OnTimer=setWeightToZero
+  t.Interval=10
+  t.Enabled=true
+end
+
+timer()
+
+[DISABLE]
+t.destroy()
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>87726</ID>
+      <Description>"Inf(Atr,Perk)Points"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : Cyberpunk2077.exe
+  Version: 
+  Date   : 2021-01-12
+  Author : Varun
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,Cyberpunk2077.exe,2B 44 24 50 89 03 48 85 F6 74 02)
+alloc(newmem,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  nop
+  mov [rbx],eax
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 2B 44 24 50 89 03
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: Cyberpunk2077.exe+23C028
+
+Cyberpunk2077.exe+23C009: 4C 89 77 38     - mov [rdi+38],r14
+Cyberpunk2077.exe+23C00D: 48 8B D7        - mov rdx,rdi
+Cyberpunk2077.exe+23C010: 0F B6 08        - movzx ecx,byte ptr [rax]
+Cyberpunk2077.exe+23C013: 48 FF C0        - inc rax
+Cyberpunk2077.exe+23C016: 48 89 07        - mov [rdi],rax
+Cyberpunk2077.exe+23C019: 8B C1           - mov eax,ecx
+Cyberpunk2077.exe+23C01B: 48 8B 4F 40     - mov rcx,[rdi+40]
+Cyberpunk2077.exe+23C01F: FF 54 C5 00     - call qword ptr [rbp+rax*8+00]
+Cyberpunk2077.exe+23C023: 48 FF 07        - inc [rdi]
+Cyberpunk2077.exe+23C026: 8B 03           - mov eax,[rbx]
+// ---------- INJECTING HERE ----------
+Cyberpunk2077.exe+23C028: 2B 44 24 50     - sub eax,[rsp+50]
+// ---------- DONE INJECTING  ----------
+Cyberpunk2077.exe+23C02C: 89 03           - mov [rbx],eax
+Cyberpunk2077.exe+23C02E: 48 85 F6        - test rsi,rsi
+Cyberpunk2077.exe+23C031: 74 02           - je Cyberpunk2077.exe+23C035
+Cyberpunk2077.exe+23C033: 89 06           - mov [rsi],eax
+Cyberpunk2077.exe+23C035: 48 8B 5C 24 40  - mov rbx,[rsp+40]
+Cyberpunk2077.exe+23C03A: 48 8B 6C 24 58  - mov rbp,[rsp+58]
+Cyberpunk2077.exe+23C03F: 48 83 C4 20     - add rsp,20
+Cyberpunk2077.exe+23C043: 41 5E           - pop r14
+Cyberpunk2077.exe+23C045: 5F              - pop rdi
+Cyberpunk2077.exe+23C046: 5E              - pop rsi
+}
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>weaponPtr</Name>
+      <Address>1E19F0E0000</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+</CheatTable>
