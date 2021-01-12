@@ -22,4 +22,6 @@ __Numeric is Numpad __
 
 Thanks and Enjoy! ,If there are other stats you want to see, let me know!   
 If you run into any other issues, feel free to message me on Discord @ VaRuN#2182   
+  
+
 __I in no way have any affiliation with CDProject Red, Cyberpunk 2077, and have no intentions of monetization. I am just a big fan! and this is just a fun project for me. You may violate End User License Agreements by using this tool.__
