@@ -9,10 +9,11 @@
       <Description>"InfAmmo"</Description>
       <LastState Activated="1"/>
       <VariableType>Auto Assembler Script</VariableType>
-      <AssemblerScript>{ Game   : Cyberpunk2077.exe
+      <AssemblerScript>
+{ Game   : Cyberpunk2077.exe
   Version: 
   Date   : 2021-01-12
-  Author : Varun
+  Author : VaRuN
 }
 
 [ENABLE]
