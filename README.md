@@ -7,7 +7,7 @@ If you know how to use cheat engine then i have also uploaded .CT file with that
 
 ![alt text](https://github.com/rathod0045/Cyberpunk_2077_trainer/blob/main/trainer.PNG )   
 
-__Numeric is Numpad __   
+__Numeric is Numpad__   
 
 ## Cheats
 1. Numpad 1 Infinite Ammo
